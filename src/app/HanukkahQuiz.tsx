@@ -28,7 +28,7 @@ const styleSheet = `
 }
 `;
 
-const Star1 = ({ style }) => (
+const Star1 = ({ style } :{style : React.CSSProperties} ) => (
 <div 
     className="absolute animate-[twinkle_3s_ease-in-out_infinite]"
     style={style}
@@ -111,7 +111,7 @@ return (
 );
 };
 
-const Menorah = ({ count }) => (
+const Menorah = ({ count } : {count : number} ) => (
 <div className="relative">
     <div className="flex justify-center items-end gap-2 mb-8">
       {/* Base of Menorah */}
@@ -212,7 +212,7 @@ const HanukkahQuiz = () => {
         const style = document.createElement('style');
         style.textContent = styleSheet;
         document.head.appendChild(style);
-        return () => document.head.removeChild(style);
+        return () => {document.head.removeChild(style);}
     }, []);
 
     return (
